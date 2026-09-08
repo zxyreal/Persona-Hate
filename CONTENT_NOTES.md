@@ -58,7 +58,7 @@ The user-provided author order is Xinyu Zhang, Ziqing Yang, Michael Backes, Yang
 
 ## Homepage presentation
 
-The separate Artifact resources section and its navigation link remain removed. Paper, code, and persona links remain beside the publication heading. The latest revision uses a white page background with warm rust and apricot accents and centers the homepage on extensibility across persona inputs, target coverage, and generating models.
+The separate Artifact resources section and its navigation link remain removed. Paper, code, and persona links remain beside the publication heading. The latest revision uses a pure white page background with charcoal typography, neutral gray surfaces, and restrained burgundy accents. The formerly dark synthesis panel is now light, with a burgundy infinity symbol; comparison controls and chart tracks use neutral surfaces. The presentation centers the homepage on extensibility across persona inputs, target coverage, and generating models.
 
 The infinity symbol illustrates open-ended pipeline expansion by design; it is not a measured dataset size or a claim of formally proven unbounded throughput or diversity. Section 5.3 (pp. 7–8) supports parallel generation across personas, identity groups, and generators; annotation is parallel across samples. A new generator reuses the persona pool, selection procedure, and prompt design, requiring a new generation and annotation run. The paper explicitly discusses incremental expansion to new generators and emerging hate targets. Broader persona inputs are an extension dimension, not a claim that new persona sources were empirically validated.
 
