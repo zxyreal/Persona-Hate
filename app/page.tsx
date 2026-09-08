@@ -12,7 +12,7 @@ import PersonaGeneration from './persona-generation';
 import DatasetComparison from './dataset-comparison';
 import Results from './results';
 import { identityGroups } from './research-data';
-import { publication } from './publication';
+import ResearchHero from './research-hero';
 const paper = sitePath('/assets/personahate-paper.pdf');
 const personas = sitePath('/assets/personas_paper.jsonl');
 const artifact = 'https://github.com/TrustAIRLab/PersonaHate/tree/main';
@@ -26,10 +26,12 @@ export default function Home() {
       <header className="document-header">
         <nav aria-label="Page sections">
           <a className="nav-title" href="#main">
+            <span className="nav-monogram" aria-hidden="true">
+              ph.
+            </span>
             PersonaHate
           </a>
           <div>
-            <a href="#resources">Resources</a>
             <a href="#overview">Overview</a>
             <a href="#dataset-comparison">Compare</a>
             <a href="#personas">Personas</a>
@@ -38,85 +40,7 @@ export default function Home() {
         </nav>
       </header>
       <main id="main" className="document">
-        <div className="paper-heading">
-          <h1>
-            <strong>PersonaHate:</strong> A Scalable Persona-Based Data
-            Synthesis Pipeline for Hate Speech Analysis
-          </h1>
-          <p className="paper-venue">{publication.venue}</p>
-          <p className="authors">
-            {publication.authors.map((author) => (
-              <a key={author.name} href={`mailto:${author.email}`}>
-                {author.name}
-              </a>
-            ))}
-          </p>
-          <p className="author-affiliation">{publication.affiliation}</p>
-          <div className="paper-links">
-            <a href={paper} target="_blank" rel="noreferrer">
-              Paper <span>PDF ↗</span>
-            </a>
-            <a href={artifact} target="_blank" rel="noreferrer">
-              Code <span>GitHub ↗</span>
-            </a>
-            <a href={personas} download>
-              Personas <span>JSONL ↓</span>
-            </a>
-          </div>
-        </div>
-        <section id="resources">
-          <h2>Artifact resources</h2>
-          <Table className="paper-table resource-table">
-            <TableHeader>
-              <TableRow>
-                <TableHead scope="col">Resource</TableHead>
-                <TableHead scope="col">Contents</TableHead>
-                <TableHead scope="col">Access</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableHead scope="row">Paper</TableHead>
-                <TableCell>
-                  Method, experiments, limitations, and appendices
-                </TableCell>
-                <TableCell>
-                  <a href={paper} target="_blank" rel="noreferrer">
-                    PDF ↗
-                  </a>
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableHead scope="row">Selected personas</TableHead>
-                <TableCell>
-                  2,285 descriptions · JSONL · id, persona, source
-                </TableCell>
-                <TableCell>
-                  <a href={personas} download>
-                    Download ↓
-                  </a>
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableHead scope="row">Source code</TableHead>
-                <TableCell>
-                  Persona extraction, speech generation, and detector training
-                  code
-                </TableCell>
-                <TableCell>
-                  <a href={artifact} target="_blank" rel="noreferrer">
-                    Repository ↗
-                  </a>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-          <p className="table-note">
-            The repository may require authorization. The full 791,283-sample
-            generated corpus and 67,452-example training set are reported in the
-            paper; they are not included in the persona download.
-          </p>
-        </section>
+        <ResearchHero paper={paper} personas={personas} artifact={artifact} />
 
         <section id="overview">
           <h2>Overview</h2>
@@ -127,28 +51,6 @@ export default function Home() {
             for diversity, and generates text across multiple LLMs and target
             identity groups.
           </p>
-          <ul className="overview-findings">
-            <li>
-              <strong>Data construction:</strong> 2,285 selected personas, 8
-              generators, and 34 identity groups produce{' '}
-              <strong>791,283 valid samples</strong>. Six judges annotate the
-              outputs; group- and label-balanced sampling yields{' '}
-              <strong>67,452 training examples</strong>.
-            </li>
-            <li>
-              <strong>Detector evaluation:</strong> DeBERTa-v3 reaches{' '}
-              <strong>77.5% average F1</strong> across four external benchmarks.
-              Fine-tuning Llama-3.1-8B improves average F1 from{' '}
-              <strong>70.7% to 78.4%</strong>.{' '}
-              <a href="#results">View per-benchmark results ↓</a>
-            </li>
-            <li>
-              <strong>Controlled ablation:</strong> at a fixed 2K training
-              budget, increasing from one generator / one group to eight
-              generators / 34 groups raises DeBERTa-v3’s average F1 from{' '}
-              <strong>64.5% to 72.6%</strong>.
-            </li>
-          </ul>
           <figure className="paper-figure pipeline-figure">
             <a
               href={sitePath('/assets/pipeline.png')}
@@ -253,6 +155,12 @@ export default function Home() {
             </strong>
             . Select a model and benchmark to see how fine-tuning changes its F1
             score. Full comparison and ablation tables are available below.
+          </p>
+          <p className="result-callout">
+            <strong>Controlled ablation.</strong> At a fixed 2K training budget,
+            increasing from one generator / one group to eight generators / 34
+            groups raises DeBERTa-v3’s average F1 from{' '}
+            <strong>64.5% to 72.6%</strong>.
           </p>
           <Results />
         </section>

@@ -34,10 +34,7 @@ if (!existsSync(entry)) {
     if (!response.ok)
       throw new Error(`Homepage export failed: ${response.status}`);
     const html = await response.text();
-    if (
-      !html.includes('Artifact resources') ||
-      !html.includes('ACM CCS 2026')
-    ) {
+    if (!html.includes('id="overview"') || !html.includes('ACM CCS 2026')) {
       throw new Error(
         'Homepage export did not contain the expected paper content.',
       );

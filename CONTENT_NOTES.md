@@ -56,9 +56,9 @@ The site does not claim a same-model, same-budget detector-training comparison b
 
 The user-provided author order is Xinyu Zhang, Ziqing Yang, Michael Backes, Yang Zhang. All four share the affiliation CISPA Helmholtz Center for Information Security. The supplied contact addresses are used only as mailto links on the names: xinyu.zhang@cispa.de, ziqing.yang@cispa.de, director@cispa.de, zhang@cispa.de. The heading now displays ACM CCS 2026, as expressly requested by the user. Page-title, author metadata, and Open Graph title are synchronized through `app/publication.ts`. The downloaded PDF remains the original anonymous manuscript.
 
-## Resource placement
+## Homepage presentation
 
-At the user’s request, Artifact resources is now the first content section, directly after the title, author, and conference block. Navigation follows that order. The existing scope and intended-use text remains at the end of the page.
+At the user's latest request, the separate Artifact resources section and its navigation link have been removed. Paper, code, and persona links remain beside the publication heading. The first content section is Overview. A two-column heading pairs the publication details with a compact, factual persona-to-text flow; three numerical highlights reuse the paper's training-set size, DeBERTa-v3 average F1, and Llama-3.1-8B fine-tuning gain. The controlled ablation statement is retained in Experimental results. Source examples, comparison values, the unfilled generated-text example, and the scope statement are unchanged.
 
 ## GitHub publishing
 
