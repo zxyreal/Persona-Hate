@@ -9,7 +9,7 @@ This repository contains the homepage source and its prebuilt GitHub Pages site 
 ## Contents
 
 - `app/page.tsx`: paper overview, original figures, dataset descriptions and download links.
-- `app/research-hero.tsx`: publication heading, download links, and paper-grounded dataset and result highlights.
+- `app/research-hero.tsx`: publication heading, download links, and the pipeline’s expansion dimensions.
 - `app/results.tsx`: interactive fine-tuning view followed by collapsible full detector, fine-tuning, and ablation tables.
 - `app/research-data.ts`: values from Tables 9, 10, 13, and 19.
 - `app/persona-examples.tsx`: paired original-post and extracted-persona examples.

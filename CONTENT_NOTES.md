@@ -58,7 +58,11 @@ The user-provided author order is Xinyu Zhang, Ziqing Yang, Michael Backes, Yang
 
 ## Homepage presentation
 
-At the user's latest request, the separate Artifact resources section and its navigation link have been removed. Paper, code, and persona links remain beside the publication heading. The first content section is Overview. A two-column heading pairs the publication details with a compact, factual persona-to-text flow; three numerical highlights reuse the paper's training-set size, DeBERTa-v3 average F1, and Llama-3.1-8B fine-tuning gain. The controlled ablation statement is retained in Experimental results. Source examples, comparison values, the unfilled generated-text example, and the scope statement are unchanged.
+The separate Artifact resources section and its navigation link remain removed. Paper, code, and persona links remain beside the publication heading. The latest revision uses a warm rust, cream, and apricot palette and centers the homepage on extensibility across persona inputs, target coverage, and generating models.
+
+The infinity symbol illustrates open-ended pipeline expansion by design; it is not a measured dataset size or a claim of formally proven unbounded throughput or diversity. Section 5.3 (pp. 7–8) supports parallel generation across personas, identity groups, and generators; annotation is parallel across samples. A new generator reuses the persona pool, selection procedure, and prompt design, requiring a new generation and annotation run. The paper explicitly discusses incremental expansion to new generators and emerging hate targets. Broader persona inputs are an extension dimension, not a claim that new persona sources were empirically validated.
+
+The 791,283 valid samples, 2,285 selected personas, eight generators, and 34 groups are shown as the instantiation demonstrated in the paper. The 67,452-example balanced training subset appears only with the experimental setup and dataset-design details, rather than as the pipeline's capacity. DeBERTa-v3's 77.5 average F1 and Llama-3.1-8B's 70.7 to 78.4 average F1 remain in Experimental results. Source examples, comparison values, the unfilled generated-text example, and the scope statement are unchanged.
 
 ## GitHub publishing
 

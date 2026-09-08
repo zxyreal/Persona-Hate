@@ -43,13 +43,22 @@ export default function Home() {
         <ResearchHero paper={paper} personas={personas} artifact={artifact} />
 
         <section id="overview">
-          <h2>Overview</h2>
+          <h2>A pipeline built to expand</h2>
           <p>
-            PersonaHate constructs hate speech training data through
-            persona-conditioned generation. It combines personas inferred from
-            4chan /pol/ with general-purpose personas from PersonaHub, samples
-            for diversity, and generates text across multiple LLMs and target
-            identity groups.
+            Generation runs in parallel across personas, target groups, and
+            models; annotation runs in parallel across samples. Adding a
+            generator reuses the persona pool, selection procedure, and prompt
+            design, requiring only a new generation-and-annotation run.{' '}
+            <a href={`${paper}#page=8`} target="_blank" rel="noreferrer">
+              Scalability · §5.3 ↗
+            </a>
+          </p>
+          <p className="study-scale">
+            <span>Demonstrated in the paper</span>
+            <strong>791,283 valid generated samples</strong>
+            <span>
+              2,285 selected personas · 8 generators · 34 identity groups
+            </span>
           </p>
           <figure className="paper-figure pipeline-figure">
             <a
@@ -156,6 +165,17 @@ export default function Home() {
             . Select a model and benchmark to see how fine-tuning changes its F1
             score. Full comparison and ablation tables are available below.
           </p>
+          <p className="training-setting">
+            <strong>Evaluation subset.</strong> Detector training uses 67,452
+            group- and label-balanced examples sampled from the generated
+            corpus. This is the paper’s training configuration, not a limit on
+            the pipeline’s output.
+          </p>
+          <p>
+            DeBERTa-v3 reaches <strong>77.5% average F1</strong>; fine-tuning
+            Llama-3.1-8B raises its average F1 from{' '}
+            <strong>70.7% to 78.4%</strong> (+7.7 percentage points).
+          </p>
           <p className="result-callout">
             <strong>Controlled ablation.</strong> At a fixed 2K training budget,
             increasing from one generator / one group to eight generators / 34
@@ -168,9 +188,9 @@ export default function Home() {
         <section id="coverage">
           <h2>Identity-group coverage</h2>
           <p>
-            Generation spans 34 identity groups in six categories. These labels
-            identify generation and evaluation targets; they do not describe the
-            persona’s own identity.
+            The paper evaluates generation across 34 identity groups in six
+            categories. These labels identify generation and evaluation targets;
+            they do not describe the persona’s own identity.
           </p>
           <Table className="paper-table coverage-table">
             <TableHeader>

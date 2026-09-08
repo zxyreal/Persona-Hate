@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   title: `PersonaHate | ${publication.venue}`,
   authors: publication.authors.map(({ name }) => ({ name })),
   description:
-    'ACM CCS 2026. A scalable persona-based data synthesis pipeline for hate speech analysis. Explore the methodology, research results, and 2,285 selected persona descriptions.',
+    'ACM CCS 2026. An extensible persona-based data synthesis pipeline for hate speech analysis, designed for incremental expansion across personas, target groups, and generators.',
   icons: { icon: sitePath('/favicon.svg') },
   openGraph: {
     title:
       'PersonaHate: A Scalable Persona-Based Data Synthesis Pipeline for Hate Speech Analysis — ACM CCS 2026',
     description:
-      '791,283 generated samples. 34 identity groups. Persona-driven supervision for more robust hate speech detectors.',
+      'Persona-driven data synthesis that can expand with new target groups and generators through modular, parallelizable generation and annotation.',
     type: 'website',
     url: siteUrl,
   },

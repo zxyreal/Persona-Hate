@@ -1,5 +1,6 @@
 import {
-  ArrowDown,
+  Infinity as InfinityIcon,
+  ArrowRight,
   ArrowUpRight,
   BookOpen,
   Code2,
@@ -52,59 +53,67 @@ export default function ResearchHero({
             </a>
           </div>
           <p className="download-detail">
-            Persona download: 2,285 descriptions · JSONL
+            Selected persona descriptions · JSONL download
           </p>
         </div>
         <aside
-          className="synthesis-portrait"
-          aria-label="PersonaHate dataset construction summary"
+          className="synthesis-portrait expansion-portrait"
+          aria-label="Extensible persona-driven data synthesis"
         >
           <div className="portrait-label">
-            <span>PERSONA → TEXT</span>
-            <span>§4.2–4.4</span>
+            <span>SCALABLE BY DESIGN</span>
+            <span>§5.3</span>
           </div>
-          <div className="portrait-input">
-            <strong>2,285</strong>
-            <span>selected personas</span>
-          </div>
-          <div className="portrait-process">
-            <ArrowDown aria-hidden="true" />
-            <p>
-              <strong>8</strong> generators <span> / </span> <strong>34</strong>{' '}
-              identity groups
-            </p>
-          </div>
-          <div className="portrait-output">
-            <strong>791,283</strong>
-            <span>valid generated samples</span>
+          <InfinityIcon
+            className="expansion-symbol"
+            strokeWidth={1.2}
+            aria-hidden="true"
+          />
+          <h2>
+            Open-ended
+            <br />
+            data synthesis
+          </h2>
+          <p className="expansion-description">
+            Extend the persona pool, target groups, and generators through the
+            same pipeline.
+          </p>
+          <div
+            className="expansion-flow"
+            aria-label="Shared generation and annotation stages"
+          >
+            <span>New inputs</span>
+            <ArrowRight aria-hidden="true" />
+            <span>Generate</span>
+            <ArrowRight aria-hidden="true" />
+            <span>Annotate</span>
           </div>
           <div className="portrait-footnote">
-            <span>6 annotation judges</span>
-            <a href={`${paper}#page=6`} target="_blank" rel="noreferrer">
-              Method <ArrowUpRight aria-hidden="true" />
+            <span>Modular · parallelizable</span>
+            <a href={`${paper}#page=8`} target="_blank" rel="noreferrer">
+              Scalability <ArrowUpRight aria-hidden="true" />
             </a>
           </div>
         </aside>
       </div>
-      <div className="headline-results" aria-label="Results at a glance">
+      <div
+        className="headline-results scalability-axes"
+        aria-label="Dimensions of pipeline expansion"
+      >
+        <a href="#persona-selection">
+          <span>Persona space</span>
+          <strong>Expand the pool</strong>
+          <small>Broaden backgrounds, views, and communication styles.</small>
+        </a>
+        <a href="#coverage">
+          <span>Target coverage</span>
+          <strong>Add new targets</strong>
+          <small>Adapt to identity groups and emerging hate topics.</small>
+        </a>
         <a href="#overview">
-          <span>Balanced training set</span>
-          <strong>67,452</strong>
-          <small>Examples balanced by group and label</small>
-        </a>
-        <a href="#results">
-          <span>Detector performance</span>
-          <strong>
-            77.5<em>% F1</em>
-          </strong>
-          <small>DeBERTa-v3 · average of four benchmarks</small>
-        </a>
-        <a href="#results">
-          <span>Fine-tuning improvement</span>
-          <strong>
-            +7.7<em>pp</em>
-          </strong>
-          <small>Llama-3.1-8B · 70.7 → 78.4 average F1</small>
+          <span>Model choice</span>
+          <strong>Add generators</strong>
+          <small>Reuse persona selection, prompts, and annotation.</small>
         </a>
       </div>
     </>
